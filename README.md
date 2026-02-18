@@ -6,13 +6,6 @@
 
 ---
 
-## Aufgabe 3+4 – Online-Auktionssystem mit EDA und CQRS
-
-Ein kleines Softwaresystem, das eine Online-Auktionsplattform simuliert.
-Implementiert mit **Event-Driven Architecture (EDA)** und **Command Query Responsibility Segregation (CQRS)**.
-
----
-
 ## Architektur
 
 ### EDA – Event-Driven Architecture
@@ -62,17 +55,6 @@ main.py                         # Demo-Programm
 
 ---
 
-## Szenario
-
-1. Zwei Auktionen werden erstellt (`CreateAuction` → Event `AuctionCreated`)
-2. Bieter geben Gebote ab (`PlaceBid` → Events `BidPlaced` + `BidBeaten`)
-3. Beide Consumer reagieren unabhängig auf jedes Event:
-   - `NotificationHandler` gibt eine Meldung im Terminal aus
-   - `AuditLogHandler` schreibt das Event in `auction_audit.log`
-4. Queries lesen den aktuellen Status ohne Änderungen (CQRS Query-Seite)
-5. Auktionen werden beendet (`EndAuction` → Event `AuctionEnded`)
-
----
 
 ## Ausführen
 
